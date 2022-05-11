@@ -17,37 +17,38 @@ Base = declarative_base()
 
 
 class Contract(Base):
-    __tablename__ = 'contracts'
+    __tablename__ = 'contract'
 
     id = Column(Integer, primary_key=True)
     law = Column(String)
     status = Column(String)
-    company = Column(BigInteger)
+    company = Column(String)
     type_purchase = Column(String)
-    site = Column(String)
-    code = Column(BigInteger)
+    site = Column(Integer, ForeignKey('site.id'))
+    code = Column(String)
     price = Column(Float)
     purchase_id = Column(Integer)
-    date_posted = Column(Date, default=datetime.utcnow())
-    date_updated = Column(Date)
+    date_posted = Column(String)
+    date_updated = Column(String)
 
-    codes = relationship("ContractFile", back_populates="contract")
+    codes = relationship("ContractFiles", back_populates="contract")
 
 
 class ContractFile(Base):
-    __tablename__ = 'contractfiles'
+    __tablename__ = 'ContractFiles'
 
     id = Column(Integer, primary_key=True)
-    code = Column(BigInteger, ForeignKey('contractfiles.code'))
+    code = Column(BigInteger, ForeignKey('contract.code'))
     name = Column(Text)
     link = Column(Text)
 
-    contract = relationship("Contract", back_populates="codes")
+    contract = relationship("contract", back_populates="codes")
 
 
 class Site(Base):
-    __tablename__ = 'sites'
+    __tablename__ = 'site'
 
     id = Column(Integer, primary_key=True)
     name = Column(Text)
-    # site = Column(Text)
+    sitelink = Column(Text)
+    purchaselink = Column(Text)

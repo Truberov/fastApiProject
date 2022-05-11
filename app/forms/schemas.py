@@ -1,47 +1,27 @@
-from typing import List, Optional
-
 from pydantic import BaseModel
 
 
-"""
-class ItemBase(BaseModel):
-    title: str
-    description: Optional[str] = None
-
-
-class ItemCreate(ItemBase):
-    pass
-
-
-class Item(ItemBase):
-    id: int
-    owner_id: int
-
-    class Config:
-        orm_mode = True
-
-
-class UserBase(BaseModel):
-    email: str
-
-
-class ContractCreate(UserBase):
-    law: string
-    status: string
-    company: BigInteger
-    type_purchase: string
-    site: string
-    code: integer
+class ContractForm(BaseModel):
+    name: str
+    law: str
+    status: str
+    company: int
+    type_purchase: str
+    site: str
+    code: str
     price: float
-    purchase_id: integer
-    date_posted: date
+    purchase_id: int
+    date_posted: str
 
 
-class Contract(UserBase):
-    id: int
-    is_active: bool
-    items: List[Item] = []
+class ContractFilesForm(BaseModel):
+    code: str
+    name: str
+    link: str
 
-    class Config:
-        orm_mode = True
-"""
+
+class SiteForm(BaseModel):
+    name: str
+    sitelink: str
+    purchaselink: str
+
