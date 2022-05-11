@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Закупки по ИНН" uuid="30c6fc96-e031-4cb8-aaed-8b26ab856c6d">
+    <data-source source="LOCAL" name="ZakupkiPoINN" uuid="4e2e73ac-3e82-4b8e-a2d9-e464a7a9a39d">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\timof\PycharmProjects\fastApiProject\Закупки по ИНН.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\timof\PycharmProjects\fastApiProject\ZakupkiPoINN.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>

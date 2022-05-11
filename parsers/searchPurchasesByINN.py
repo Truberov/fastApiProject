@@ -391,7 +391,7 @@ class PurchaseParserByINN:
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         print(sys.argv)
-        purchaseParserByINN = PurchaseParserByINN(dbNamePurchasesByINN='Закупки по ИНН.db')
+        purchaseParserByINN = PurchaseParserByINN(dbNamePurchasesByINN='ZakupkiPoINN.db')
         # inn = 7729040491
         purchaseParserByINN.parse(sys.argv[1])
         purchaseParserByINN.close()

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-# from app.handlers.auth import router as auth_router
+from app.api.handlers import router as auth_router
 # from app.handlers.projects import router as project_router
 from app.database import engine
 from app.models import models
@@ -19,7 +19,7 @@ def get_application():
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    # application.include_router(auth_router)
+    application.include_router(auth_router)
     # application.include_router(project_router)
     return application
 
