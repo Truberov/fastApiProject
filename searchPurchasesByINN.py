@@ -394,7 +394,7 @@ def parse():
 
 
 if __name__ == '__main__':
-    schedule.every().day.at("18:37").do(parse)
+    schedule.every().day.at("20:15").do(parse)
     while True:
         schedule.run_pending()
         time.sleep(1)
