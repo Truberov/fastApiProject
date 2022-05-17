@@ -1,3 +1,5 @@
+from typing import List, Optional
+
 from pydantic import BaseModel
 
 
@@ -5,23 +7,19 @@ class ContractForm(BaseModel):
     name: str
     law: str
     status: str
-    company: int
+    company: str
     type_purchase: str
     site: str
     code: str
     price: float
-    purchase_id: int
+    purchase_id: str
     date_posted: str
 
 
 class ContractFilesForm(BaseModel):
-    code: str
     name: str
     link: str
 
 
-class SiteForm(BaseModel):
-    name: str
-    sitelink: str
-    purchaselink: str
-
+class ContractInfo(ContractForm):
+    files: List = []

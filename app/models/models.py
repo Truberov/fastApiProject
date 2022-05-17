@@ -19,6 +19,7 @@ Base = declarative_base()
 class Contract(Base):
     __tablename__ = 'contract'
 
+    name = Column(String)
     law = Column(String)
     status = Column(String)
     company = Column(String)
@@ -26,18 +27,17 @@ class Contract(Base):
     site = Column(Integer, ForeignKey('site.id'))
     code = Column(String, primary_key=True)
     price = Column(Float)
-    purchase_id = Column(Integer)
+    purchase_id = Column(BigInteger)
     date_posted = Column(String)
     date_updated = Column(String)
 
 
-class ContractFile(Base):
+class ContractFiles(Base):
     __tablename__ = 'ContractFiles'
 
-    id = Column(Integer, primary_key=True)
-    code = Column(BigInteger, ForeignKey('contract.code'))
-    name = Column(Text)
-    link = Column(Text)
+    code = Column(BigInteger, ForeignKey('contract.code'), primary_key=True)
+    name = Column(String)
+    link = Column(String)
 
 
 class Site(Base):

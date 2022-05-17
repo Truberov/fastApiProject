@@ -6,3 +6,5 @@ python-jose
 passlib[bcrypt]~=1.7.4
 pydantic~=1.9.0
 python-multipart~=0.0.5
+bs4
+requests
